@@ -1,21 +1,24 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import ProductCard from './components/ProductCard';
-import { products } from './data/products';
+import Home from './pages/Home';
+import CartPage from './pages/CartPage';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <main className="main-content">
-        <h1 className="page-title">Nos Meilleurs Produits</h1>
-        
-        <div className="products-grid">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </main>
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        {/* main-content contiendra dynamiquement nos pages */}
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 

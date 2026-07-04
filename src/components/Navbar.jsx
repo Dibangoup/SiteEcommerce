@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 function Navbar() {
@@ -6,16 +7,19 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <h2>ShopReact</h2>
+        {/* Retour à l'accueil en cliquant sur le logo */}
+        <Link to="/">ShopReact</Link>
       </div>
       <ul className="navbar-links">
-        <li>Accueil</li>
-        <li>Boutique</li>
+        <li>
+          <Link to="/">Accueil</Link>
+        </li>
       </ul>
-      <div className="navbar-cart">
+      {/* Redirection vers le panier en cliquant sur l'icône */}
+      <Link to="/cart" className="navbar-cart">
         <span>Panier 🛒</span>
         <span className="cart-count">{cartCount}</span>
-      </div>
+      </Link>
     </nav>
   );
 }
