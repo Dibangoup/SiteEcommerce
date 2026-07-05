@@ -17,7 +17,7 @@ function Checkout() {
 
   const [orderCompleted, setOrderCompleted] = useState(false);
 
-  const shippingCost = cartTotal > 100 ? 0 : 9.99;
+  const shippingCost = cartTotal > 25000 ? 0 : 1000;
   const grandTotal = cartTotal + shippingCost;
 
   // Met à jour l'état local au fur et à mesure que l'utilisateur écrit
@@ -94,7 +94,7 @@ function Checkout() {
               required 
             />
           </div>
-          <button type="submit" className="place-order-btn">Payer {grandTotal.toFixed(2)} €</button>
+          <button type="submit" className="place-order-btn">Payer {grandTotal.toFixed(2)} FCFA</button>
         </form>
 
         {/* Récapitulatif à droite */}
@@ -104,22 +104,22 @@ function Checkout() {
             {cartItems.map((item) => (
               <div key={item.id} className="summary-item">
                 <span>{item.title} (x{item.quantity})</span>
-                <span>{(item.price * item.quantity).toFixed(2)} €</span>
+                <span>{(item.price * item.quantity).toFixed(2)} FCFA</span>
               </div>
             ))}
           </div>
           <hr />
           <div className="summary-row">
             <span>Sous-total</span>
-            <span>{cartTotal.toFixed(2)} €</span>
+            <span>{cartTotal.toFixed(2)} FCFA</span>
           </div>
           <div className="summary-row">
             <span>Livraison</span>
-            <span>{shippingCost === 0 ? "Gratuite" : `${shippingCost.toFixed(2)} €`}</span>
+            <span>{shippingCost === 0 ? "Gratuite" : `${shippingCost.toFixed(2)} FCFA`}</span>
           </div>
           <div className="summary-row total">
             <span>Total</span>
-            <span>{grandTotal.toFixed(2)} €</span>
+            <span>{grandTotal.toFixed(2)} FCFA</span>
           </div>
         </div>
       </div>
