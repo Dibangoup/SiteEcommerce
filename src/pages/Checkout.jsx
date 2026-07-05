@@ -94,7 +94,7 @@ function Checkout() {
               required 
             />
           </div>
-          <button type="submit" className="place-order-btn">Payer {grandTotal.toFixed(2)} FCFA</button>
+          <button type="submit" className="place-order-btn">Payer {grandTotal.toFixed(0)} FCFA</button>
         </form>
 
         {/* Récapitulatif à droite */}
@@ -104,22 +104,22 @@ function Checkout() {
             {cartItems.map((item) => (
               <div key={item.id} className="summary-item">
                 <span>{item.title} (x{item.quantity})</span>
-                <span>{(item.price * item.quantity).toFixed(2)} FCFA</span>
+                <span>{(item.price * item.quantity).toFixed(0)} FCFA</span>
               </div>
             ))}
           </div>
           <hr />
           <div className="summary-row">
             <span>Sous-total</span>
-            <span>{cartTotal.toFixed(2)} FCFA</span>
+            <span>{cartTotal.toFixed(0)} FCFA</span>
           </div>
           <div className="summary-row">
             <span>Livraison</span>
-            <span>{shippingCost === 0 ? "Gratuite" : `${shippingCost.toFixed(2)} FCFA`}</span>
+            <span>{shippingCost === 0 ? "Gratuite" : `${shippingCost.toFixed(0)} FCFA`}</span>
           </div>
           <div className="summary-row total">
             <span>Total</span>
-            <span>{grandTotal.toFixed(2)} FCFA</span>
+            <span>{grandTotal.toFixed(0)} FCFA</span>
           </div>
         </div>
       </div>
