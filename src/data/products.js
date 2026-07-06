@@ -10,9 +10,9 @@ export const products = [
   },
   {
     id: 2,
-    title: "Veste en Jean Classique",
+    title: "Pantalon en Jean Classique",
     price: 20000,
-    description: "Une veste en jean intemporelle à coupe ajustée. Confectionnée en coton biologique robuste, elle se marie avec toutes vos tenues de saison.",
+    description: "Un pantalon en jean intemporelle à coupe ajustée. Confectionné en coton biologique robuste, il se marie avec toutes vos tenues de saison.",
     category: "vetements",
     image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&auto=format&fit=crop&q=60",
     rating: { rate: 4.1, count: 85 }

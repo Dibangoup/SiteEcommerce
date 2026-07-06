@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">
         {/* Retour à l'accueil en cliquant sur le logo */}
-        <Link to="/">ShopReact</Link>
+        <Link to="/">ShopHere</Link>
       </div>
       <ul className="navbar-links">
         <li>
